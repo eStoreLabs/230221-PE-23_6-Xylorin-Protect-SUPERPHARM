@@ -107,6 +107,19 @@
   background: url(../images/kv-bg.png) no-repeat;
   background-size: 215%;
   background-position: right 20% top 0%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+#es-rc #es-rc-content .es-kv:after {
+  content: "";
+  width: 87%;
+  height: 32px;
+  display: block;
+  background-color: #1f357d;
+  transform: translate(9%, -34%) rotate(-6deg);
+  position: absolute;
+  z-index: 0;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-kv {
@@ -141,7 +154,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -50px;
+  margin-top: 20px;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-kv__wrapper {
@@ -163,9 +176,12 @@
 }
 #es-rc #es-rc-content .es-kv__title {
   font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 #es-rc #es-rc-content .es-kv__subtitle {
   font-size: 1.5rem;
+  line-height: 1.1;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-kv__subtitle {
@@ -220,6 +236,8 @@
   align-items: center;
   padding: 2rem;
   gap: 2rem;
+  background-color: #914292;
+  color: #ffd416;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-about {
@@ -254,8 +272,9 @@
   background-image: url(/assets/images/features-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 67%;
+  background-position: 37%;
   min-height: 400px;
+  position: relative;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-features__title-wrapper {
@@ -268,10 +287,12 @@
   font-weight: 700;
   font-style: italic;
   font-size: 1.5rem;
-  padding: 2rem;
-  padding-top: 4rem;
   text-transform: uppercase;
   max-width: 85%;
+  position: absolute;
+  right: -5%;
+  top: 78%;
+  transform: translateY(-50%);
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-features__title {
@@ -296,7 +317,7 @@
   font-weight: 400;
   font-style: italic;
   font-size: 1.3rem;
-  border-bottom: 2px solid #dc2536;
+  border-bottom: 2px solid #944293;
   max-width: 80%;
   padding-block: 1rem;
   margin: auto;
@@ -313,9 +334,12 @@
   }
 }
 #es-rc #es-rc-content .es-features__packshot {
-  max-width: 90%;
   margin-left: auto;
   margin-right: -46px;
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.7294117647) 0%, rgba(7, 58, 255, 0) 100%);
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-features__packshot {
@@ -355,16 +379,24 @@
   font-size: 1.3rem;
 }
 #es-rc #es-rc-content .es-video {
+  color: #FFF;
+  text-align: center;
   padding: 1rem;
   position: relative;
   z-index: 1;
+  background-image: url(/assets/images/water-bg.png);
+  background-repeat: no-repeat;
+  background-size: 331% 100%;
+  background-position: 0%;
+  height: 365px;
+  padding-top: 4rem;
 }
 #es-rc #es-rc-content .es-video:after {
   content: "";
   width: 87%;
   height: 50px;
   display: block;
-  background-color: #44c0eb;
+  background-color: #944293;
   transform: translate(9%, -72%) rotate(1deg);
   box-shadow: 8px 8px 24px -5px rgb(0, 0, 0);
   z-index: 0;
@@ -373,6 +405,24 @@
   #es-rc #es-rc-content .es-video {
     padding: 2rem;
   }
+}
+#es-rc #es-rc-content .es-video__title {
+  font-family: "urw-din", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+#es-rc #es-rc-content .es-video__subtitle {
+  font-family: "urw-din", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 #es-rc #es-rc-content .es-video__wrapper {
   box-shadow: 8px 8px 24px -5px rgb(0, 0, 0);
@@ -391,7 +441,7 @@
   margin-top: -163px;
   color: #FFF;
   padding-inline: 1rem;
-  padding-top: calc(57px + 3rem);
+  padding-top: 215px;
   padding-bottom: 1rem;
   text-align: center;
   position: relative;

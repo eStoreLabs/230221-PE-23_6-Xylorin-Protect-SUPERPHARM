@@ -168,6 +168,20 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         background: url(../images/kv-bg.png) no-repeat;
         background-size: 215%;
         background-position: right 20% top 0%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:after {
+            content: "";
+            width: 87%;
+            height: 32px;
+            display: block;
+            background-color: #1f357d;
+            transform: translate(9%, -34%) rotate(-6deg);
+            position: absolute;
+            z-index: 0;
+        }
 
         @media (min-width: 768px) {
             background-size: 77%;
@@ -192,6 +206,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         &__packshot {
             max-width: 80%;
             margin: auto;
+
             @media (min-width: 768px) {
                 width: 45%;
             }
@@ -201,7 +216,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: -50px;
+            margin-top: 20px;
 
             @media (min-width: 768px) {
                 margin-top: 36px;
@@ -223,10 +238,13 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
         &__title {
             font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
         }
 
         &__subtitle {
             font-size: 1.5rem;
+            line-height: 1.1;
 
             @media (min-width: 768px) {
                 margin-left: 1.5rem;
@@ -283,6 +301,8 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         align-items: center;
         padding: 2rem;
         gap: 2rem;
+        background-color: $purple--background;
+        color: $yellow--main;
 
         @media (min-width: 768px) {
             flex-direction: row;
@@ -312,13 +332,14 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
     .es-features {
         overflow: hidden;
-
+        
         &__title-wrapper {
             background-image: url(/assets/images/features-bg.png);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: 67%;
+            background-position: 37%;
             min-height: 400px;
+            position: relative;
 
             @media (min-width: 768px) {
                 background-position: center;
@@ -329,10 +350,12 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             color: #FFF;
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.5rem;
-            padding: 2rem;
-            padding-top: 4rem;
             text-transform: uppercase;
             max-width: 85%;
+            position: absolute;
+            right: -5%;
+            top: 78%;
+            transform: translateY(-50%);
 
             @media (min-width: 768px) {
                 max-width: 69%;
@@ -343,6 +366,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
         &__packshot-container {
             padding: 2rem;
+
 
             @media (min-width: 768px) {
                 display: flex;
@@ -355,7 +379,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         &__single {
             @include font($ff--main, $fw--regular, $fs--italic);
             font-size: 1.3rem;
-            border-bottom: 2px solid $red;
+            border-bottom: 2px solid $purple;
             max-width: 80%;
             padding-block: 1rem;
             margin: auto;
@@ -373,9 +397,12 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         }
 
         &__packshot {
-            max-width: 90%;
             margin-left: auto;
             margin-right: -46px;
+            background-size: 100% 100%;
+            background-position: 0px 0px;
+            background-repeat: no-repeat;
+            background-image: radial-gradient(60% 60% at 50% 50%, #FFFFFFBA 0%, #073AFF00 100%);
 
             @media (min-width: 768px) {
                 max-width: 55%;
@@ -418,9 +445,17 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     }
 
     .es-video {
+        color: #FFF;
+        text-align: center;
         padding: 1rem;
         position: relative;
         z-index: 1;
+        background-image: url(/assets/images/water-bg.png);
+        background-repeat: no-repeat;
+        background-size: 331% 100%;
+        background-position: 0%;
+        height: 365px;
+        padding-top: 4rem;
 
         &:after {
             content: "";
@@ -428,7 +463,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             height: 50px;
             display: block;
             //position: absolute;
-            background-color: $blue--accent;
+            background-color: $purple;
 
             transform: translate(9%, -72%) rotate(1deg);
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
@@ -440,7 +475,20 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         @media (min-width: 768px) {
             padding: 2rem;
         }
-
+        &__title {
+            @include font($ff--accent, $fw--bold, $fs--italic);
+            font-size: 1.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-top: 2rem;
+        }
+        &__subtitle {
+            @include font($ff--accent, $fw--bold, $fs--italic);
+            font-size: 1.3rem;
+            line-height: 1.1;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
         &__wrapper {
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
@@ -463,7 +511,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         margin-top: -163px;
         color: #FFF;
         padding-inline: 1rem;
-        padding-top: calc(57px + 3rem);
+        padding-top: 215px;
         padding-bottom: 1rem;
         text-align: center;
         position: relative;
@@ -543,6 +591,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         background-repeat: no-repeat;
         background-image: radial-gradient(50% 50% at 50% 50%, #1498e9 0%, #073AFF00 100%);
     }
+
     .es-cross__link {
         display: flex;
         flex-direction: column;
