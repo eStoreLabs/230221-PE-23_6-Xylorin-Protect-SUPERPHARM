@@ -294,18 +294,17 @@
   font-style: italic;
   font-size: 1.5rem;
   text-transform: uppercase;
-  max-width: 85%;
+  max-width: 18ch;
   position: absolute;
-  right: -5%;
+  right: 5%;
   top: 78%;
   transform: translateY(-50%);
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-features__title {
-    max-width: 48%;
     font-size: 2.3rem;
     top: 50%;
-    right: 0%;
+    right: 3%;
   }
 }
 #es-rc #es-rc-content .es-features__packshot-container {

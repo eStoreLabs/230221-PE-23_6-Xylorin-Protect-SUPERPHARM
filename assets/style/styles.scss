@@ -362,17 +362,16 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.5rem;
             text-transform: uppercase;
-            max-width: 85%;
+            max-width: 18ch;
             position: absolute;
-            right: -5%;
+            right: 5%;
             top: 78%;
             transform: translateY(-50%);
 
             @media (min-width: 768px) {
-                max-width: 48%;
                 font-size: 2.3rem;
                 top: 50%;
-                right: 0%;
+                right: 3%;
             }
         }
 
