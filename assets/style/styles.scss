@@ -165,13 +165,13 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     font-family: $ff--main;
 
     .es-kv {
-        background: url(../images/kv-bg.png) no-repeat;
+        //background: url(../images/kv-bg.png) no-repeat;
         background-size: 215%;
         background-position: right 20% top 0%;
         overflow: hidden;
         position: relative;
         z-index: 1;
-
+        
         &:after {
             content: "";
             width: 87%;
@@ -181,15 +181,25 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             transform: translate(9%, -34%) rotate(-6deg);
             position: absolute;
             z-index: 0;
+
+            @media (min-width: 550px) {
+                transform: translate(9%, -36%) rotate(-4deg);
+            }
+
+            @media (min-width: 768px) {
+                transform: translate(9%, 65%) rotate(-2deg);
+            }
         }
 
         @media (min-width: 768px) {
             background-size: 77%;
             background-position: right top;
-            height: 460px;
-
+            padding-bottom: 2rem;
             .es-kv__desktop-wrapper {
                 display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding-inline: 2rem;
             }
         }
 
@@ -208,7 +218,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             margin: auto;
 
             @media (min-width: 768px) {
-                width: 45%;
+                // width: 45%;
             }
         }
 
@@ -220,7 +230,6 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
             @media (min-width: 768px) {
                 margin-top: 36px;
-                margin-left: -103px;
                 align-items: flex-start;
             }
         }
@@ -240,15 +249,17 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             font-size: 3rem;
             line-height: 1.1;
             margin-bottom: 0.5rem;
+
+            @media (min-width: 768px) {
+                text-align: center;
+            }
         }
 
         &__subtitle {
             font-size: 1.5rem;
             line-height: 1.1;
 
-            @media (min-width: 768px) {
-                margin-left: 1.5rem;
-            }
+
         }
 
         &__flex-container {
@@ -332,7 +343,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
     .es-features {
         overflow: hidden;
-        
+
         &__title-wrapper {
             background-image: url(/assets/images/features-bg.png);
             background-repeat: no-repeat;
@@ -358,9 +369,10 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             transform: translateY(-50%);
 
             @media (min-width: 768px) {
-                max-width: 69%;
+                max-width: 48%;
                 font-size: 2.3rem;
-                padding-top: 5rem;
+                top: 50%;
+                right: 0%;
             }
         }
 
@@ -375,7 +387,10 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
                 margin: auto;
             }
         }
+        &__single-container {
+           flex-basis: 65%;
 
+        }
         &__single {
             @include font($ff--main, $fw--regular, $fs--italic);
             font-size: 1.3rem;
@@ -390,9 +405,9 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
             @media (min-width: 768px) {
                 max-width: 100%;
-                margin-right: -30px;
                 padding-top: 3.8rem;
                 padding-bottom: 1.2rem;
+                
             }
         }
 
@@ -405,8 +420,8 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             background-image: radial-gradient(60% 60% at 50% 50%, #FFFFFFBA 0%, #073AFF00 100%);
 
             @media (min-width: 768px) {
-                max-width: 55%;
-                margin-right: -94px;
+                max-width: 49%;
+                margin-right: -73px;
             }
         }
 
@@ -474,14 +489,23 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
         @media (min-width: 768px) {
             padding: 2rem;
+            padding-top: 7rem;
+            background-size: 145% 100%;
+    height: 574px;
         }
+
         &__title {
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.5rem;
             line-height: 1.1;
             text-transform: uppercase;
             margin-top: 2rem;
+            @media (min-width: 768px) {
+                margin-top: unset;
+                font-size: 2.3rem;
+            }
         }
+
         &__subtitle {
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.3rem;
@@ -489,6 +513,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             margin-top: 1rem;
             margin-bottom: 2rem;
         }
+
         &__wrapper {
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
@@ -508,15 +533,24 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
     .es-cross {
         background-color: $blue--background;
-        margin-top: -163px;
         color: #FFF;
         padding-inline: 1rem;
-        padding-top: 215px;
+        padding-top: 4rem;
         padding-bottom: 1rem;
         text-align: center;
         position: relative;
-
+        @media (min-width: 430px) {
+            padding-top: 8rem;
+        }
+        @media (min-width: 600px) {
+            padding-top: 12rem;
+        }
+        @media (min-width: 716px) {
+            padding-top: 14rem;
+            
+        }
         @media (min-width: 768px) {
+            padding-top: 6rem;
             padding-inline: 2rem;
             padding-bottom: 2rem;
         }
